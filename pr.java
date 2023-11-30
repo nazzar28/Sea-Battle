@@ -5,20 +5,37 @@ public class pr{
     int[][]f=new int[7][7];
 
     for(int i=0;i<7;i++){
-      int y=random();
       System.out.println();
       for(int j=0;j<7;j++){
-        f[i][y]=1;
         System.out.print(f[i][j]+" ");
       }
     }
+
+    System.out.println();
+
+    for(int k=0;k<4;k++){
+      f[rx()][ry()]=1;
+      System.out.println();
+      for(int i=0;i<7;i++){
+        System.out.println();
+        for(int j=0;j<7;j++){
+          System.out.print(f[i][j]+" ");
+      }
+    }
+  }
+    
   }
 
-  private static int ob(){
-    for(int i=0;i<4;i++){
-      int random=(int)(Math.random()*7);
+  private static int rx(){
+    int random=(int)(Math.random()*7);
+    int x=random;
+    return x;
+  }
 
-    }
+  private static int ry(){
+    int random=(int)(Math.random()*7);
+    int y=random;
+    return y;
   }
 
   private static int random(){

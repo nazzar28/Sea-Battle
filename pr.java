@@ -22,14 +22,34 @@ public class pr{
     int fn=rx(ran);
     int sn=ry(ran);
     f[fn][sn]=1;
-    if(cs(ran)==1){
-      f[fn+1][sn]=1;
-      f[fn-1][sn]=1;
+    if(fn==0){
+      if(hn(ran)==1){
+        f[fn][sn+1]=1;
+        f[fn][sn-1]=1;
+      }else{
+        f[fn+1][sn]=1;
+        f[fn+2][sn]=1;
+      }
     }
-    else{
-      f[fn][sn+1]=1;
-      f[fn][sn-1]=1;
+    else if(fn==6){
+      if(hn(ran)==1){
+        f[fn][sn+1]=1;
+        f[fn][sn-1]=1;
+      }else{
+        f[fn-1][sn]=1;
+        f[fn-2][sn]=1;
+      }
+    }else{
+      if(hn(ran)==1){
+        f[fn+1][sn]=1;
+        f[fn-1][sn]=1;
+      }
+      else{
+        f[fn][sn+1]=1;
+        f[fn][sn-1]=1;
+      }
     }
+
     for(int i=0;i<7;i++){
       System.out.println();
       for(int j=0;j<7;j++){
@@ -38,7 +58,7 @@ public class pr{
     }
   } 
 
-  private static int cs(Random ran){
+  private static int hn(Random ran){
     int hn = ran.nextInt(3-1);
     return hn;
   }

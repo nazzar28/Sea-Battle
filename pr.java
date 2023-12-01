@@ -22,7 +22,39 @@ public class pr{
     int fn=rx(ran);
     int sn=ry(ran);
     f[fn][sn]=1;
-    if(fn==0){
+    if(fn==0 && sn==0){
+      if(hn(ran)==1){
+        f[fn+1][sn]=1;
+        f[fn+2][sn]=1;
+      }else{
+        f[fn][sn+1]=1;
+        f[fn][sn+2]=1;
+      }
+    }else if(fn==0 && sn==6){
+      if(hn(ran)==1){
+        f[fn+1][sn]=1;
+        f[fn+2][sn]=1;
+      }else{
+        f[fn][sn-1]=1;
+        f[fn][sn-2]=1;
+      }
+    }else if(fn==6 && sn==0){
+      if(hn(ran)==1){
+        f[fn-1][sn]=1;
+        f[fn-2][sn]=1;
+      }else{
+        f[fn][sn+1]=1;
+        f[fn][sn+2]=1;
+      }
+    }else if(fn==6 && sn==6){
+      if(hn(ran)==1){
+        f[fn-1][sn]=1;
+        f[fn-2][sn]=1;
+      }else{
+        f[fn][sn-1]=1;
+        f[fn][sn-2]=1;
+      }
+    }else if(fn==0){
       if(hn(ran)==1){
         f[fn][sn+1]=1;
         f[fn][sn-1]=1;
@@ -30,8 +62,7 @@ public class pr{
         f[fn+1][sn]=1;
         f[fn+2][sn]=1;
       }
-    }
-    else if(fn==6){
+    }else if(fn==6){
       if(hn(ran)==1){
         f[fn][sn+1]=1;
         f[fn][sn-1]=1;

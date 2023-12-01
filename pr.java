@@ -56,19 +56,35 @@ public class pr{
       }
     }else if(fn==0){
       if(hn(ran)==1){
-        f[fn][sn+1]=1;
-        f[fn][sn-1]=1;
-      }else{
         f[fn+1][sn]=1;
         f[fn+2][sn]=1;
+      }else{
+        f[fn][sn+1]=1;
+        f[fn][sn-1]=1;
       }
     }else if(fn==6){
       if(hn(ran)==1){
-        f[fn][sn+1]=1;
-        f[fn][sn-1]=1;
-      }else{
         f[fn-1][sn]=1;
         f[fn-2][sn]=1;
+      }else{
+        f[fn][sn+1]=1;
+        f[fn][sn-1]=1;
+      }
+    }else if(sn==0){
+      if(hn(ran)==1){
+        f[fn+1][sn]=1;
+        f[fn-1][sn]=1;
+      }else{
+        f[fn][sn+1]=1;
+        f[fn][sn+2]=1;
+      }
+    }else if(sn==6){
+      if(hn(ran)==1){
+        f[fn+1][sn]=1;
+        f[fn-1][sn]=1;
+      }else{
+        f[fn][sn-1]=1;
+        f[fn][sn-2]=1;
       }
     }else{
       if(hn(ran)==1){
@@ -95,19 +111,14 @@ public class pr{
   }
 
   private static int rx(Random ran){
-    int random=ran.nextInt(8-0);
+    int random=ran.nextInt(7-0);
     int x=random;
     return x;
   }
 
   private static int ry(Random ran){
-    int random=ran.nextInt(8-0);
+    int random=ran.nextInt(7-0);
     int y=random;
     return y;
-  }
-
-  private static int random(Random ran){
-    int random=ran.nextInt(8-0);
-    return random;
   }
 }

@@ -16,44 +16,60 @@ public class pr{
     int sn=rn(ran);
     f[fn][sn]=1;
     if(fn==0 && sn==0){
-      if(f[0][2]+f[1][1]+f[1][2]+f[2][0]+f[2][1]!=0){
-        twobb(ran, f);
-      }else{
+      if(f[0][2]+f[1][1]+f[1][2]+f[2][0]+f[2][1]==0){
         if(hn(ran)==1){
         f[fn+1][sn]=1;
       }else{
         f[fn][sn+1]=1;
       }
+      }else if(f[0][1]+f[1][1]+f[2][0]+f[2][1]==0){
+        f[fn+1][sn]=1;
+      }else if(f[0][2]+f[1][0]+f[1][1]+f[1][2]==0){
+        f[fn][sn+1]=1;
+      }else{
+        twobb(ran, f);
       }
     }else if(fn==0 && sn==6){
-      if(f[0][4]+f[1][4]+f[1][5]+f[2][5]+f[2][6]!=0){
-        twobb(ran, f);
-      }else{
+      if(f[0][4]+f[1][4]+f[1][5]+f[2][5]+f[2][6]==0){
         if(hn(ran)==1){
         f[fn+1][sn]=1;
       }else{
         f[fn][sn-1]=1;
       }
+      }else if(f[0][5]+f[1][5]+f[2][5]+f[2][6]==0){
+        f[fn+1][sn]=1;
+      }else if(f[0][4]+f[1][4]+f[1][5]+f[1][6]==0){
+        f[fn][sn-1]=1;
+      }else{
+        twobb(ran, f);
       }
     }else if(fn==6 && sn==0){
-      if(f[4][0]+f[4][1]+f[5][1]+f[5][2]+f[6][2]!=0){
-        twobb(ran, f);
-      }else{
+      if(f[4][0]+f[4][1]+f[5][1]+f[5][2]+f[6][2]==0){
         if(hn(ran)==1){
         f[fn-1][sn]=1;
       }else{
         f[fn][sn+1]=1;
       }
+      }else if(f[4][0]+f[4][1]+f[5][1]+f[6][1]==0){
+        f[fn-1][sn]=1;
+      }else if(f[5][0]+f[5][1]+f[5][2]+f[6][2]==0){
+        f[fn][sn+1]=1;
+      }else{
+        twobb(ran, f);
       }
     }else if(fn==6 && sn==6){
-      if(f[4][5]+f[4][6]+f[5][4]+f[5][5]+f[6][4]!=0){
-        twobb(ran, f);
-      }else{
+      if(f[4][5]+f[4][6]+f[5][4]+f[5][5]+f[6][4]==0){
         if(hn(ran)==1){
         f[fn-1][sn]=1;
       }else{
         f[fn][sn-1]=1;
       }
+      }else if(f[4][5]+f[4][6]+f[5][5]+f[6][5]==0){
+        f[fn-1][sn]=1;
+      }else if(f[5][4]+f[5][5]+f[5][6]+f[6][4]==0){
+        f[fn][sn-1]=1;
+      }else{
+        twobb(ran, f);
       }
     }
 
